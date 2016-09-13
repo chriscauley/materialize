@@ -20,7 +20,8 @@
 }
 
 /* Text inputs */
-
+.input-field { /* ccc only change things wrapped by input field */
+  .errorlist { color: $input-error-color; font-size: 0.8rem; } /* ccc for django errors */
 input:not([type]),
 input[type=text],
 input[type=password],
@@ -33,7 +34,7 @@ input[type=datetime-local],
 input[type=tel],
 input[type=number],
 input[type=search],
-textarea.materialize-textarea {
+textarea { /* no longer need materialize-textarea class */
 
   // General Styles
   background-color: transparent;
@@ -119,6 +120,7 @@ textarea.materialize-textarea {
     opacity: 0;
     transition: .2s opacity ease-out, .2s color ease-out;
   }
+}
 }
 
 // Styling for input field wrapper
@@ -246,14 +248,15 @@ textarea.materialize-textarea {
 // Default textarea
 textarea {
   width: 100%;
-  height: $input-height;
+  height: $input-height*1.5; /* ccc hate the other height */
   background-color: transparent;
 
-  &.materialize-textarea {
+  .input-field & {
     overflow-y: hidden; /* prevents scroll bar flash */
-    padding: .8rem 0 1.6rem 0; /* prevents text jump on Enter keypress */
+    padding: .8rem 0; /* prevents text jump on Enter keypress */ /*ccc who does padding bottom on textareas? */
     resize: none;
-    min-height: $input-height;
+    min-height: $input-height*1.5; /* ccc hate the other height */
+    transition: all 0s; /* ccc textarea transition.... */
   }
 }
 
