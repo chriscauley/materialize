@@ -29,6 +29,12 @@
  *  24. Progress Bar
  */
 
+/* 0. HTML Variables
+   ========================================================================== */
+html {
+  --body-text-color: #{rgba(0,0,0,0.8)};
+  --boty-bg-color: #{white};
+}
 
 /* 1. Colors
    ========================================================================== */
@@ -221,10 +227,11 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 /* 13. Navigation Bar
    ========================================================================== */
 
+$navbar-bg-color: var(--body-bg-color);
 $navbar-height: 64px !default;
 $navbar-height-mobile: 56px !default;
 $navbar-font-size: 1rem !default;
-$navbar-font-color: #fff !default;
+$navbar-font-color: var(--body-text-color);
 $navbar-brand-font-size: 2.1rem !default;
 
 /* 14. Side Navigation
